@@ -24,24 +24,10 @@ async def start(bot, update):
    
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.document & ~Filters.edited) # @pyrogram.Client.on_message(pyrogram.Filters.document | Filters.video) set like this to trigger both or remove filters.document and add filters.video for video only
+@pyrogram.Client.on_message(pyrogram.Filters.photo) # @pyrogram.Client.on_message(pyrogram.Filters.document | Filters.video) set like this to trigger both or remove filters.document and add filters.video for video only
 async def old(bot, update):
-    stock = update.caption
-    join = Translation.CAP_TION
-    output = stock + join
-    await bot.edit_message_caption(
-        chat_id=update.chat.id,
-        message_id=update.message_id,
-        caption=output,
-        parse_mode="markdown", #also you can set html or none
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton('🦋name🦋', url='https://t.me/url')],
-            ]  
-        )
-    )
-    
-  
-        
-    
-                          
+photo = f"{update.photo.file_id}"
+ await bot.send_sticker(
+        chat_id = update.chat.id,
+        sticker = photo
+  )
