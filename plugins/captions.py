@@ -33,6 +33,6 @@ async def old(bot, update):
 )
     await bot.send_sticker(
         chat_id=update.chat.id,
-        sticker=media
+        sticker=sticker
         
     )
