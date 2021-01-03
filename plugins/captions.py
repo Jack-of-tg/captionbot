@@ -23,16 +23,14 @@ async def start(bot, update):
     )
    
 
-
-@pyrogram.Client.on_message(pyrogram.Filters.photo) # @pyrogram.Client.on_message(pyrogram.Filters.document | Filters.video) set like this to trigger both or remove filters.document and add filters.video for video only
+@pyrogram.Client.on_message(pyrogram.Filters.document & ~Filters.edited) # @pyrogram.Client.on_message(pyrogram.Filters.document | Filters.video) set like this to trigger both or remove filters.document and add filters.video for video only
 async def old(bot, update):
-    sticker = update.photo.file_id
-
-    pyrogram.InputMediaAnimation(
-     media=sticker
-)
-    await bot.send_sticker(
+    await bot.edit_message_caption(
         chat_id=update.chat.id,
-        sticker=sticker
+        message_id=update.message_id,
+        caption="""<b>❤️Fɪʀꜱᴛ Oɴ Tᴇʟᴇɢʀᴀᴍ❤️
+━━━━━━━━━━━━━━━━
+➠Cʜᴀɴɴᴇʟ : @Universal_Cinemas
+➠Cʜᴀɴɴᴇʟ : @UC_Links</b>""",
+        parse_mode = html #also you can set html or none
         
-    )
