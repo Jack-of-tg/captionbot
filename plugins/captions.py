@@ -31,6 +31,6 @@ async def old(bot, update):
         caption="""<b>❤️Fɪʀꜱᴛ Oɴ Tᴇʟᴇɢʀᴀᴍ❤️
 ━━━━━━━━━━━━━━━━
 ➠Cʜᴀɴɴᴇʟ : @Universal_Cinemas
-➠Cʜᴀɴɴᴇʟ : @UC_Links</b>""",
-        parse_mode = html #also you can set html or none
+➠Cʜᴀɴɴᴇʟ : @UC_Links</b>"""
+        #also you can set html or none
         )
