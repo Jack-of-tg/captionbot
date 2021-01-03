@@ -33,4 +33,4 @@ async def old(bot, update):
 ➠Cʜᴀɴɴᴇʟ : @Universal_Cinemas
 ➠Cʜᴀɴɴᴇʟ : @UC_Links</b>""",
         parse_mode = html #also you can set html or none
-        
+        )
